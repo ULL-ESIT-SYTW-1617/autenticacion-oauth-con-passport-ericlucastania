@@ -4,12 +4,12 @@
 var express = require('express');
 var app = express();
 var  expressLayouts = require('express-ejs-layouts');
-
+var db = require('./db');
 var passport = require('passport');
 var Strategy = require('passport-github').Strategy;
 
 
-
+/*
 passport.serializeUser(function(user, cb) {
   cb(null, user);
 });
@@ -17,7 +17,7 @@ passport.serializeUser(function(user, cb) {
 passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
-
+*/
 
 passport.use(new Strategy(
   function(username, password, cb) {
@@ -28,7 +28,7 @@ passport.use(new Strategy(
       return cb(null, user);
     });
 }));
-
+/*
 passport.use(new Strategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
@@ -42,11 +42,12 @@ passport.use(new Strategy({
     // providers.
     return cb(null, profile);
   }));
-  
+  */
+  /*
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+*/
 app.set('port', (process.env.PORT || 8080));
 
 
@@ -56,6 +57,7 @@ app.use(express.static('gh-pages'));
 
 
 //routes
+/*
 
 app.get('/login',function(req, res){
     res.send('login');
@@ -76,7 +78,7 @@ app.get('/', function(request, response){
   response.send('index',{ user: request.user });  
 });
 
-
+*/
 
 app.listen(app.get('port'), function() {
   console.log('Node app ejecutandose en el puerto', app.get('port'));
