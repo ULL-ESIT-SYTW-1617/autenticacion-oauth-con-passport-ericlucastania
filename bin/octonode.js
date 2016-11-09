@@ -3,11 +3,8 @@
 module.exports = {     
  
  
-	octoIni: () => {
+	octoIni: (fs,github,readlineSync) => {
 		 return new Promise((resolviendo,reject) => {
-			 var fs = require('fs-extra');
-			 var github = require('octonode'); 
-			 var readlineSync = require('readline-sync');
 			 var username = readlineSync.question('Introduzca su nombre de usuario en Github: ');
 			 var password = readlineSync.question('Introduzca su contraseña en Github: ', {
 			 	hideEchoBack: true
@@ -17,8 +14,6 @@ module.exports = {
 				"token": "",
 				"id": "",
 				"user":{
-					"repo": "",
-					"email": "",
 					"name": ""
 				}
 			 };
@@ -32,18 +27,18 @@ module.exports = {
 					  if (err) return err;
 					  resolve(json.token = token);
 					  json.id = id;
-					 
+					  json.user.name = username;
 					});
 				});
 			} 
 			
 			
-			var directoriomonito = process.env.HOME;
+			var directorioHome = process.env.HOME;
 			
 			try{
 				auth().then(function(resolve,reject){
-					fs.mkdirSync(directoriomonito + '/.gitbook-start');
-					var pac = directoriomonito + '/.gitbook-start/';
+					fs.mkdirSync(directorioHome + '/.gitbook-start');
+					var pac = directorioHome + '/.gitbook-start/';
 					fs.writeFile(pac + 'config.json',JSON.stringify(json), function(err){
 						if (err) throw err;
 						else resolviendo(console.log("guardando el json correctamente.."));
@@ -61,18 +56,17 @@ module.exports = {
               
 	},
 	
-	octoRepo: () => {
+	octoRepo: (fs,github,readlineSync,directorioUsuario) => {
 		return new Promise((resolve,reject) => {
+			//paquetes
 			require('shelljs/global');
-			var github = require('octonode');
-			var readlineSync = require('readline-sync');
-			var fs = require('fs-extra');
 			var configJson = require(process.env.HOME + '/.gitbook-start/config.json');
 			var client = github.client(configJson.token);
+			var ghme = client.me();
+			//variables de entorno y rutas 
 			var directorioUsuario = process.cwd() + '/';
 			var pck = require(directorioUsuario + 'package.json');
 			var dir = readlineSync.question('Introduzca su nombre del repositorio a crear en Github: ');
-			var ghme = client.me();
 			
 			ghme.repo({
 			  "name": dir,
@@ -83,7 +77,7 @@ module.exports = {
 				
 				fs.writeFile(directorioUsuario + 'package.json', JSON.stringify(pck));
 				resolve(exec('git remote add origin ' + status.ssh_url + ' ;git add .;git commit -m "inicializando repo";git push'));
-
+				
 			}); //repo
 		});
 		
