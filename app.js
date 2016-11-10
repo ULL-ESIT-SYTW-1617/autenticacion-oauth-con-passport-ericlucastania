@@ -4,7 +4,7 @@
 var express = require('express');
 var app = express();
 var  expressLayouts = require('express-ejs-layouts');
-var db = require('./db');
+
 var passport = require('passport');
 var Strategy = require('passport-github').Strategy;
 
@@ -18,17 +18,7 @@ passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
 
-/*
-passport.use(new Strategy(
-  function(username, password, cb) {
-    db.users.findByUsername(username, function(err, user) {
-      if (err) { return cb(err); }
-      if (!user) { return cb(null, false); }
-      if (user.password != password) { return cb(null, false); }
-      return cb(null, user);
-    });
-}));
-*/
+
 passport.use(new Strategy({
     clientID: '217bf6cd072238e4f2d1',
     clientSecret: '3aac244b495a7fda4e113c46d8db90eeec137201',
