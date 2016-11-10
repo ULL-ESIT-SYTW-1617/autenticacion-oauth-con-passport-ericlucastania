@@ -18,11 +18,10 @@ passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
 
-
 passport.use(new Strategy({
-    clientID: '217bf6cd072238e4f2d1',
-    clientSecret: '3aac244b495a7fda4e113c46d8db90eeec137201',
-    callbackURL: 'http://127.0.0.1:8080:/login/github/return'
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    callbackURL: 'http://localhost:/login/github/return'
   },
   function(accessToken, refreshToken, profile, cb) {
     // In this example, the user's GitHub profile is supplied as the user
@@ -32,7 +31,6 @@ passport.use(new Strategy({
     // providers.
     return cb(null, profile);
   }));
-  
   
 app.use(passport.initialize());
 app.use(passport.session());
@@ -47,7 +45,6 @@ app.use(express.static('gh-pages'));
 
 
 //routes
-
 
 app.get('/login',function(req, res){
     res.send('login');

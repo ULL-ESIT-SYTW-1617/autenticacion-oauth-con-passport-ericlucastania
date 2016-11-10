@@ -1,6 +1,6 @@
 {
-  "name": "pruebas-elt",
-  "version": "0.0.2",
+  "name": "gitbook-start-elt",
+  "version": "0.3.145",
   "description": "Repo to start gitbook proyect",
   "main": "index.js",
   "scripts": {
@@ -29,8 +29,6 @@
   "devDependencies": {},
   "dependencies": {
     "ejs": "^2.5.2",
-    "express": "^4.14.0",
-    "express-ejs-layouts": "^2.2.0",
     "fs-extra": "^1.0.0",
     "gh-pages": "^0.11.0",
     "git-config": "0.0.7",
