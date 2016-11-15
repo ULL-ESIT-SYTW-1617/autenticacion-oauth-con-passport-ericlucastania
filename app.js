@@ -15,9 +15,6 @@ passport.use(new Strategy({
 },function(accessToken, refreshToken, profile, cb) {
     var github = require('octonode');
     var client = github.client(accessToken);
-    var ghme           = client.me();
-    var ghuser         = client.user('crguezl');
-    var ghrepo         = client.repo('crguezl/ull-esit-1617');
     var ghorg          = client.org('ULL-ESIT-SYTW-1617');
     console.log("CAMBIOSOOSOSOSOSOSO");
     ghorg.members(function(err,stdout){
