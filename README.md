@@ -73,6 +73,16 @@ La siguiente función es la que se utiliza para guardar el token que se obtiene
 ```gitbook-start -d PLUGIN``` !! También puedes usar la opción --deploy
 
 
+* Te pedirá un token, puedes generarlo ejecutando ```heroku auth:token``` o bien usar uno ya generado.
+* Se te solicitará el nombre que tendrá tu aplicación en Heroku.
+* Te preguntará si deseas pedir autentificación para que sólo los usuarios de tu organización puedan leer el libro.
+    ** Tienes diferentes opciones:
+        ** Si quieres que solo los usuarios de la organización puedan acceder al libro 
+          tendras que poner la opción 's' o 'S' o simplemente darle a enter
+        ** Si quieres que cualquiera pueda acceder al libro,tendrás que poner la opción 
+          'n' o 'N'
+        
+
 **3. Ejecuta el gulp creado**
 
 ```gulp deploy-plugin```
