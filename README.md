@@ -30,7 +30,7 @@ Cuando ejecutes el paso anterior si no es la primera vez que lo haces te pedirá
 		contraseña de github.Si introduces los datos correctamente te pedirá que introduzcas el nombre que quieres ponerle al repo,
 		Ahora se desplegará el libro en github:
 				
-Ejemplo de uso:
+**Ejemplo de uso:**
 				
 				
 ![](https://4.bp.blogspot.com/-tZyZ4yGuI9A/WCxV2cB2ktI/AAAAAAAAAAg/I2tzZnB7FL4Nld6OQRs2NYG-SRwa9kIuwCLcB/s1600/repo.PNG)
@@ -94,13 +94,13 @@ elegido en el package.json.
 ## Opciones
 
     gitbook-start [OPTIONS]
-        -d nombre del directorio a crear node gitbook-star -d miDirectorio
+        --d nombre del directorio a crear node gitbook-star -d miDirectorio
         -a autor del libro a crear node gitbook-star -a AutorDelLibro
         -e email del autor del libro node gitbook-star -e eric.ramos.suarez@gmail.com
         -r repositorio github contra el que se va a trabajar -r nameRepo
         -v muestra la version del paquete gitbook-start -v
         -h muestra ayuda sobre las opciones disponibles
-        --repo nombre_del_repositorio que quieres crear en Github
+        --repo opción que te permite crear un repositorio en Github
 
 
 ## Enlaces interesantes 
