@@ -17,38 +17,35 @@ no podrás acceder al contenido del libro.
 
 
 **2. Ejecuta el binario para el render del template**
-
-```gitbook-start --dir Carpeta``` !!Si no ejecutas el --dir se creará una carpeta con tu nombre de usuario
-
-**3. Demostración de uso**
+	
+Tienes la opción de crear el repositorio o la opción de no crearlo:
+	
+	
+**Crear repositorio**
+* Si quieres que te cree un repositorio en Github tienes que poner la opción --repo "nombre repo"
+	
+   ```gitbook-start --dir Carpeta --repo Nombre_repo```
 
 Cuando ejecutes el paso anterior si no es la primera vez que lo haces te pedirá el usuario y 
-contraseña de github.Si introduces los datos correctamente te pedirá que introduzcas el nombre que quieres ponerle al repo,
-Ahora se desplegará el libro en github:
-
+		contraseña de github.Si introduces los datos correctamente te pedirá que introduzcas el nombre que quieres ponerle al repo,
+		Ahora se desplegará el libro en github:
+				
 Ejemplo de uso:
-
-
+				
+				
 ![](https://4.bp.blogspot.com/-tZyZ4yGuI9A/WCxV2cB2ktI/AAAAAAAAAAg/I2tzZnB7FL4Nld6OQRs2NYG-SRwa9kIuwCLcB/s1600/repo.PNG)
-
+				
 Una vez que se te creado el repo ya puedes trabajar en él,ya no tendrás que poner más el 
-usuario y contraseña gracias a que se te generó un token para evitar que cada vez que quieras 
-crear un repo te pida tus credenciales.
-El token que se genera se guarda en el ./gitbook-start/config.json un lugar seguro para que no pueda acceder nadie
-que no seas tu.
+			usuario y contraseña gracias a que se te generó un token para evitar que cada vez que quieras 
+				crear un repo te pida tus credenciales.
+				El token que se genera se guarda en el ./gitbook-start/config.json un lugar seguro para que no pueda acceder nadie
+				que no seas tu.		
 
-La siguiente función es la que se utiliza para guardar el token que se obtiene
-```javascript
-    auth().then(function (resolve, reject) {
-					fs.mkdirSync(directorioHome + '/.gitbook-start');
-					var pac = directorioHome + '/.gitbook-start/';
-					fs.writeFile(pac + 'config.json', JSON.stringify(json), function (err) {
-						if (err) throw err;
-						else resolviendo(console.log("guardando el json correctamente.."));
+**No Crear repositorio**
+* Si no quieres que se te cree el repositorio en Github simplemente ejecuta la siguiente opción
+		
+     ```gitbook-start --dir Carpeta``` !!Si no ejecutas el --dir se creará una carpeta con tu nombre de usuario
 
-					});
-				});
-```
 **3. Entra en la carpeta**
 
  ```cd Carpeta```
@@ -60,12 +57,12 @@ La siguiente función es la que se utiliza para guardar el token que se obtiene
 
 **1. Instala el plugin forma global**
 
-```npm install -g PLUGIN```
+```npm install -g gitbook-start-plugin-heroku-ericlucastania```
 
 **2. Ejecuta el plugin que desees, asegúrate de estar dentro de la carpeta**
 
 
-```gitbook-start -d PLUGIN``` !! También puedes usar la opción --deploy
+```gitbook-start -d heroku``` !! También puedes usar la opción --deploy
 
 
 * Te pedirá un token, puedes generarlo ejecutando ```heroku auth:token``` o bien usar uno ya generado.
@@ -80,7 +77,7 @@ La siguiente función es la que se utiliza para guardar el token que se obtiene
 
 **3. Ejecuta el gulp creado**
 
-```gulp deploy-plugin```
+```gulp deploy-heroku```
 
 
 
@@ -103,6 +100,7 @@ elegido en el package.json.
         -r repositorio github contra el que se va a trabajar -r nameRepo
         -v muestra la version del paquete gitbook-start -v
         -h muestra ayuda sobre las opciones disponibles
+        --repo nombre_del_repositorio que quieres crear en Github
 
 
 ## Enlaces interesantes 
