@@ -24,7 +24,7 @@ Tienes la opción de crear el repositorio o la opción de no crearlo:
 **Crear repositorio**
 * Si quieres que te cree un repositorio en Github tienes que poner la opción --repo "nombre repo"
 	
-   ```gitbook-start --dir Carpeta --repo Nombre_repo```
+   ```gitbook-start --dir Carpeta --repo```
 
 Cuando ejecutes el paso anterior si no es la primera vez que lo haces te pedirá el usuario y 
 		contraseña de github.Si introduces los datos correctamente te pedirá que introduzcas el nombre que quieres ponerle al repo,
