@@ -94,7 +94,7 @@ elegido en el package.json.
 ## Opciones
 
     gitbook-start [OPTIONS]
-        --d nombre del directorio a crear node gitbook-star -d miDirectorio
+        --dir nombre_del_directorio a crear gitbook-star -dir miDirectorio
         -a autor del libro a crear node gitbook-star -a AutorDelLibro
         -e email del autor del libro node gitbook-star -e eric.ramos.suarez@gmail.com
         -r repositorio github contra el que se va a trabajar -r nameRepo
