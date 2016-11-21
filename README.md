@@ -22,7 +22,7 @@ Tienes la opción de crear el repositorio o la opción de no crearlo:
 	
 	
 **Crear repositorio**
-* Si quieres que te cree un repositorio en Github tienes que poner la opción --repo "nombre repo"
+* Si quieres que te cree un repositorio en Github tienes que poner la opción --repo 
 	
    ```gitbook-start --dir Carpeta --repo```
 
